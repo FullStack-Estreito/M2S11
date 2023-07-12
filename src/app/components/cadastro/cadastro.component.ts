@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -10,7 +11,7 @@ export class CadastroComponent {
 
   cadastroForm: FormGroup;
 
-  constructor() {
+  constructor(private router: Router) {
     this.cadastroForm = new FormGroup({
       'nome': new FormControl('', [Validators.required]),
       'telefone': new FormControl('', [Validators.required, Validators.pattern('^[0-9]{11}$')]),
@@ -23,7 +24,7 @@ export class CadastroComponent {
   }
 
   onSubmit() {
-    console.log(this.cadastroForm.value);
+    this.router.navigate(['login']);
   }
 
   validateErrorMessage(field: string) {

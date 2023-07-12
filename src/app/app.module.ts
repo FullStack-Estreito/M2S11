@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
-import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask'
+import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroComponent,
+    AuthLayoutComponent
   ],
   imports: [
     BrowserModule,
