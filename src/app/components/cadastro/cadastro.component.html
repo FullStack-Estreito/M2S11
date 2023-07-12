@@ -1,4 +1,4 @@
-<form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+<form style="min-width: 350px;" [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
         <label for="nome">Nome Completo</label>
         <input type="text" class="form-control" id="nome" placeholder="Insira seu nome completo" formControlName="nome">
@@ -38,5 +38,5 @@
         <span *ngIf="validateErrorMessage('confirmacaoSenha')">Por favor insira uma senha válida</span>
         <span *ngIf="validarMensagemErroConfirmacaoSenha()">Sua confirmação de senha e sua senha devem ser iguais</span>
     </div>
-    <button type="submit" class="btn btn-primary" [disabled]="cadastroForm.invalid">Entrar</button>
+    <button type="submit" class="btn btn-primary" [disabled]="cadastroForm.invalid">Cadastrar</button>
 </form>
