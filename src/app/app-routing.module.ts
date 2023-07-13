@@ -6,6 +6,8 @@ import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component
 import { InicioComponent } from './components/inicio/inicio.component';
 import { privadoGuard, publicoGuard } from './guards/auth.guard';
 import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autenticado.component';
+import { VoluntariosComponent } from './components/voluntarios/voluntarios.component';
+import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.component';
 
 const routes: Routes = [
   { 
@@ -25,7 +27,22 @@ const routes: Routes = [
       },
     ] 
   },
-  { path: 'inicio', component: InicioComponent, canActivate: [ privadoGuard ] },
+  {
+    path: 'privado',
+    component: PrivadoLayoutComponent,
+    children: [
+      { 
+        path: 'inicio', 
+        component: InicioComponent, 
+        canActivate: [ privadoGuard ] 
+      },
+      { 
+        path: 'voluntarios', 
+        component: VoluntariosComponent, 
+        canActivate: [ privadoGuard ] 
+      },
+    ]
+  },
   { path: 'nao-autenticado', component: NaoAutenticadoComponent }
 ];
 

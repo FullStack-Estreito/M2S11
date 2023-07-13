@@ -25,7 +25,7 @@ export class LoginComponent {
         senha: this.loginForm.get('password')?.value
       };
       await this.authService.logar(usuario);
-      this.router.navigate(['inicio']);
+      this.router.navigate(['privado/inicio']);
     } catch {
       alert('Email ou senha inválidos!!');
     }
