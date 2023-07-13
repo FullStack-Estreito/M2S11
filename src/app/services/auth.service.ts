@@ -16,6 +16,10 @@ export class AuthService {
     return lastValueFrom(this.httpClient.post('http://localhost:3000/usuarios', usuario));
   }
 
+  sair() {
+    this.usuarioLogado = false;
+  }
+
   async logar(usuario: { email: string, senha: string }) {
     const usuariosCadastrados = await this._obterUsuarios();
     for (const usuarioCadastrado of usuariosCadastrados) {
