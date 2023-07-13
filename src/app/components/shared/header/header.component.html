@@ -9,7 +9,8 @@
             <a class="nav-item nav-link active">Inicio</a>
             <a class="nav-item nav-link">Voluntários</a>
             <a class="nav-item nav-link">Eventos</a>
-            <a class="nav-item nav-link">Deslogar</a>
+            <a class="nav-item nav-link" style="cursor: pointer;" (click)="sair()">Sair</a>
         </div>
     </div>
+    <p class="my-2 my-lg-0">Olá {{ obterUsuarioPrimeiroNome() }}</p>
 </nav>

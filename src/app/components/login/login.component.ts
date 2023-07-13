@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -10,15 +11,24 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   loginForm: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private authService: AuthService) {
     this.loginForm = new FormGroup({
       'email': new FormControl('', [ Validators.required, Validators.email ]),
       'password': new FormControl('', [ Validators.required ])
     });
   }
 
-  onSubmit() {
-    this.router.navigate(['inicio']);
+  async onSubmit() {
+    try {
+      const usuario = {
+        email: this.loginForm.get('email')?.value,
+        senha: this.loginForm.get('password')?.value
+      };
+      await this.authService.logar(usuario);
+      this.router.navigate(['inicio']);
+    } catch {
+      alert('Email ou senha inválidos!!');
+    }
   }
 
   cadastrar() {

@@ -4,6 +4,8 @@ import { LoginComponent } from './components/login/login.component';
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { privadoGuard, publicoGuard } from './guards/auth.guard';
+import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autenticado.component';
 
 const routes: Routes = [
   { 
@@ -11,11 +13,20 @@ const routes: Routes = [
     component: AuthLayoutComponent,
     children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: 'login', component: LoginComponent },
-      { path: 'cadastro', component: CadastroComponent },
+      { 
+        path: 'login', 
+        component: LoginComponent,
+        canActivate: [ publicoGuard ] 
+      },
+      { 
+        path: 'cadastro', 
+        component: CadastroComponent,
+        canActivate: [ publicoGuard ]
+      },
     ] 
   },
-  { path: 'inicio', component: InicioComponent },
+  { path: 'inicio', component: InicioComponent, canActivate: [ privadoGuard ] },
+  { path: 'nao-autenticado', component: NaoAutenticadoComponent }
 ];
 
 @NgModule({
