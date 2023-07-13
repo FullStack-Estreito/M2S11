@@ -8,7 +8,8 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AuthService {
 
-  usuarioLogado = false;
+  usuarioLogadoFlag = false;
+  usuarioLogado: IUsuario | null = null;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -17,7 +18,8 @@ export class AuthService {
   }
 
   sair() {
-    this.usuarioLogado = false;
+    this.usuarioLogadoFlag = false;
+    this.usuarioLogado = null;
   }
 
   async logar(usuario: { email: string, senha: string }) {
@@ -26,11 +28,18 @@ export class AuthService {
       const emailValido = usuarioCadastrado.email === usuario.email;
       const senhaValida = usuarioCadastrado.senha === usuario.senha;
       if (emailValido && senhaValida) {
-        this.usuarioLogado = true;
+        this.usuarioLogadoFlag = true;
+        this.usuarioLogado = usuarioCadastrado;
         return;
       }
     }
     throw new Error("Usuário não cadastrado!!");
+  }
+
+  obterUsuarioPrimeiroNome() {
+    const nome = this.usuarioLogado?.nomeCompleto;
+    if (nome === undefined) throw new Error("Usuário não definido"); 
+    return nome.substring(0, nome.indexOf(' '));
   }
 
   private _obterUsuarios() {

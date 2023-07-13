@@ -16,4 +16,8 @@ export class HeaderComponent {
     this.router.navigate(['login']);
   }
 
+  obterUsuarioPrimeiroNome() {
+    return this.authService.obterUsuarioPrimeiroNome();
+  }
+
 }
