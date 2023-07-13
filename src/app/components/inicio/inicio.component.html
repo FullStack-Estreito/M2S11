@@ -5,4 +5,20 @@
     <hr>
     <h3 class="pt-3">Número de eventos: </h3>
     <h3> {{ quantidadeEventos }} </h3>
+    <hr>
+    <h3>Eventos por dia: </h3>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Dia</th>
+            <th scope="col">Quantidade de eventos</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let data of listaDatasEventos.data">
+          <tr>
+            <td>{{data}}</td>
+            <td>{{listaDatasEventos.quantidade[listaDatasEventos.data.indexOf(data)]}}</td>
+          </tr>
+        </tbody>
+      </table>
 </div>

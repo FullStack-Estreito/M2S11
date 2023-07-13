@@ -19,4 +19,23 @@ export class EventosService {
     return eventos.length;
   }
 
+  async obterListaDeEventosPorData() {
+    let listaDatasEventos: { data: string[], quantidade: number[] } = {
+      data: [],
+      quantidade: []
+    };
+    const eventos = await this.obterEventos();
+    let datas: string[] = [];
+    eventos.forEach(evento => datas.push(evento.dataInicio));
+    datas.forEach(data => {
+      if (listaDatasEventos.data.includes(data))
+        listaDatasEventos.quantidade[listaDatasEventos.data.indexOf(data)] += 1;
+      else {
+        listaDatasEventos.data.push(data);
+        listaDatasEventos.quantidade.push(1);
+      }
+    });
+    return listaDatasEventos;
+  }
+
 }

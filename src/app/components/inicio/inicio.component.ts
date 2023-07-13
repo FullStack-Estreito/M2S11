@@ -11,6 +11,10 @@ export class InicioComponent implements OnInit {
 
   quantidadeVoluntarios: number = 0;
   quantidadeEventos: number = 0;
+  listaDatasEventos: { data: string[], quantidade: number[] } = {
+    data: [],
+    quantidade: []
+  };
 
   constructor(
     private voluntariosService: VoluntariosService,
@@ -19,6 +23,6 @@ export class InicioComponent implements OnInit {
   async ngOnInit() {
     this.quantidadeVoluntarios = await this.voluntariosService.obterQuantidadeTotal();
     this.quantidadeEventos = await this.eventosService.obterQuantidadeTotal();
+    this.listaDatasEventos = await this.eventosService.obterListaDeEventosPorData();
   }
-
 }
