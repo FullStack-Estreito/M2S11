@@ -42,6 +42,10 @@ export class AuthService {
     return nome.substring(0, nome.indexOf(' '));
   }
 
+  verificarUsuarioLogado() {
+    return this.usuarioLogadoFlag;
+  }
+
   private _obterUsuarios() {
     return lastValueFrom(this.httpClient.get<IUsuario[]>('http://localhost:3000/usuarios'));
   }

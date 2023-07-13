@@ -10,7 +10,8 @@ import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { InicioComponent } from './components/inicio/inicio.component';
-import { HeaderComponent } from './components/shared/header/header.component'
+import { HeaderComponent } from './components/shared/header/header.component';
+import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autenticado.component'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { HeaderComponent } from './components/shared/header/header.component'
     CadastroComponent,
     AuthLayoutComponent,
     InicioComponent,
-    HeaderComponent
+    HeaderComponent,
+    NaoAutenticadoComponent
   ],
   imports: [
     BrowserModule,
