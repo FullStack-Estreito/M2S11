@@ -13,7 +13,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { HeaderComponent } from './components/shared/header/header.component';
 import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autenticado.component';
 import { VoluntariosComponent } from './components/voluntarios/voluntarios.component';
-import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.component'
+import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.component';
+import { VoluntariosCadastroComponent } from './components/voluntarios-cadastro/voluntarios-cadastro.component';
+import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.
     HeaderComponent,
     NaoAutenticadoComponent,
     VoluntariosComponent,
-    PrivadoLayoutComponent
+    PrivadoLayoutComponent,
+    VoluntariosCadastroComponent,
+    NaoEncontradoComponent
   ],
   imports: [
     BrowserModule,

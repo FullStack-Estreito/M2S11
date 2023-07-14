@@ -8,6 +8,8 @@ import { privadoGuard, publicoGuard } from './guards/auth.guard';
 import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autenticado.component';
 import { VoluntariosComponent } from './components/voluntarios/voluntarios.component';
 import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.component';
+import { VoluntariosCadastroComponent } from './components/voluntarios-cadastro/voluntarios-cadastro.component';
+import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
 
 const routes: Routes = [
   { 
@@ -41,9 +43,15 @@ const routes: Routes = [
         component: VoluntariosComponent, 
         canActivate: [ privadoGuard ] 
       },
+      { 
+        path: 'voluntarios-cadastro', 
+        component: VoluntariosCadastroComponent, 
+        canActivate: [ privadoGuard ] 
+      }
     ]
   },
-  { path: 'nao-autenticado', component: NaoAutenticadoComponent }
+  { path: 'nao-autenticado', component: NaoAutenticadoComponent },
+  { path: '**', component: NaoEncontradoComponent }
 ];
 
 @NgModule({
