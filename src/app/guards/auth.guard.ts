@@ -13,5 +13,5 @@ export const publicoGuard: CanActivateFn = (route, state) => {
   if (!inject(AuthService).verificarUsuarioLogado())
     return true;
   else
-    return inject(Router).createUrlTree(['/inicio']);
+    return inject(Router).createUrlTree(['/privado/inicio']);
 };

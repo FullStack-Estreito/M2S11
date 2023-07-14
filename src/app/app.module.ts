@@ -11,7 +11,11 @@ import { provideNgxMask, NgxMaskDirective, NgxMaskPipe } from 'ngx-mask';
 import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { HeaderComponent } from './components/shared/header/header.component';
-import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autenticado.component'
+import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autenticado.component';
+import { VoluntariosComponent } from './components/voluntarios/voluntarios.component';
+import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.component';
+import { VoluntariosCadastroComponent } from './components/voluntarios-cadastro/voluntarios-cadastro.component';
+import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component'
 
 @NgModule({
   declarations: [
@@ -21,7 +25,11 @@ import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autent
     AuthLayoutComponent,
     InicioComponent,
     HeaderComponent,
-    NaoAutenticadoComponent
+    NaoAutenticadoComponent,
+    VoluntariosComponent,
+    PrivadoLayoutComponent,
+    VoluntariosCadastroComponent,
+    NaoEncontradoComponent
   ],
   imports: [
     BrowserModule,

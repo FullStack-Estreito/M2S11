@@ -18,4 +18,8 @@ export class VoluntariosService {
     const voluntarios = await this.obterVoluntarios();
     return voluntarios.length;
   }
+
+  cadastrarVoluntario(voluntario: IVoluntario) {
+    return lastValueFrom(this.httpClient.post('http://127.0.0.1:3000/voluntarios', voluntario));
+  }
 }
