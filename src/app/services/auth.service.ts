@@ -8,9 +8,6 @@ import { lastValueFrom } from 'rxjs';
 })
 export class AuthService {
 
-  usuarioLogadoFlag = false;
-  usuarioLogado: IUsuario | null = null;
-
   constructor(private httpClient: HttpClient) { }
 
   registrar(usuario: IUsuario) {
@@ -18,8 +15,7 @@ export class AuthService {
   }
 
   sair() {
-    this.usuarioLogadoFlag = false;
-    this.usuarioLogado = null;
+    localStorage.clear();
   }
 
   async logar(usuario: { email: string, senha: string }) {
@@ -28,8 +24,11 @@ export class AuthService {
       const emailValido = usuarioCadastrado.email === usuario.email;
       const senhaValida = usuarioCadastrado.senha === usuario.senha;
       if (emailValido && senhaValida) {
-        this.usuarioLogadoFlag = true;
-        this.usuarioLogado = usuarioCadastrado;
+        localStorage.setItem('usuario', JSON.stringify(usuarioCadastrado));
+        const horario = new Date();
+        horario.setMinutes(horario.getMinutes() + 30);
+        const horarioString = horario.getTime().toString();
+        localStorage.setItem('sessao', horarioString)
         return;
       }
     }
@@ -37,13 +36,29 @@ export class AuthService {
   }
 
   obterUsuarioPrimeiroNome() {
-    const nome = this.usuarioLogado?.nomeCompleto;
+    const usuarioString = localStorage.getItem('usuario');
+    if (usuarioString === null) throw new Error('Usuário nulo!');
+    const usuarioLogado = <IUsuario>JSON.parse(usuarioString);
+    const nome = usuarioLogado.nomeCompleto;
     if (nome === undefined) throw new Error("Usuário não definido"); 
     return nome.substring(0, nome.indexOf(' '));
   }
 
   verificarUsuarioLogado() {
-    return this.usuarioLogadoFlag;
+    const usuario = localStorage.getItem('usuario');
+    if (!usuario) return false; 
+
+    const dataString = localStorage.getItem('sessao');
+    if (dataString === null) throw new Error('data nula!!');
+    const dataSessao = new Date(dataString).getTime();
+    const dataAtual = new Date().getTime();
+    const sessaoExpirada = dataAtual > dataSessao;
+    if (sessaoExpirada) {
+      this.sair();
+      return false;
+    }
+
+    return true; 
   }
 
   private _obterUsuarios() {
