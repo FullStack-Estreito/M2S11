@@ -1,0 +1,36 @@
+<div class="mt-3">
+    <div class="row mb-3">
+        <div class="col-9">
+            <h3>Lista de eventos cadastrados: </h3>
+        </div>
+        <div class="col-3">
+            <button class="btn btn-primary btn-sm" routerLink="/privado/eventos-cadastro">Cadastrar evento</button>
+        </div>
+    </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Data de inicio</th>
+            <th scope="col">Horário de inicio</th>
+            <th scope="col">Data final</th>
+            <th scope="col">Horário final</th>
+            <th scope="col">Endereço</th>
+            <th scope="col">Número de voluntários</th>
+            <th scope="col">Editar</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let evento of eventos">
+          <tr>
+            <td>{{evento.nome}}</td>
+            <td>{{evento.dataInicio}}</td>
+            <td>{{evento.horarioInicio}}</td>
+            <td>{{evento.dataFinal}}</td>
+            <td>{{evento.horarioFinal}}</td>
+            <td>{{evento.endereco}}</td>
+            <td>{{evento.numeroVoluntarios}}</td>
+            <td>Editar</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
