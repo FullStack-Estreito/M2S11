@@ -14,6 +14,10 @@ export class EventosService {
     return lastValueFrom(this.httpClient.get<IEvento[]>('http://127.0.0.1:3000/eventos'));
   }
 
+  obterEventoPorId(id: number) {
+    return lastValueFrom(this.httpClient.get<IEvento>('http://127.0.0.1:3000/eventos/' + id));
+  }
+
   async obterQuantidadeTotal() {
     const eventos = await this.obterEventos();
     return eventos.length;
@@ -40,6 +44,10 @@ export class EventosService {
 
   cadastrar(evento: IEvento) {
     return lastValueFrom(this.httpClient.post('http://127.0.0.1:3000/eventos', evento));
+  }
+
+  editar(evento: IEvento) {
+    return lastValueFrom(this.httpClient.put(`http://127.0.0.1:3000/eventos/${evento.id}`, evento));
   }
 
 }

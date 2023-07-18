@@ -1,5 +1,5 @@
 <div class="mt-3">
-    <h3>Cadastro de eventos</h3>
+    <h3>{{ modoEdicao ? 'Edição' : 'Cadastro' }} de eventos</h3>
     <form [formGroup]="cadastroEventoForm" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="col">
@@ -57,7 +57,7 @@
         <span class="msg-erro-form text-danger" *ngIf="validarMensagemDeErro('descricao')">Por favor insira a descrição
             do evento</span>
         <div class="mt-3">
-            <button type="submit" class="btn btn-primary" [disabled]="cadastroEventoForm.invalid">Cadastrar
+            <button type="submit" class="btn btn-primary" [disabled]="cadastroEventoForm.invalid">{{ modoEdicao ? 'Editar' : 'Cadastrar' }}
                 evento</button>
         </div>
     </form>
