@@ -38,4 +38,8 @@ export class EventosService {
     return listaDatasEventos;
   }
 
+  cadastrar(evento: IEvento) {
+    return lastValueFrom(this.httpClient.post('http://127.0.0.1:3000/eventos', evento));
+  }
+
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IEvento } from 'src/app/interfaces/IEvento';
 import { EventosService } from 'src/app/services/eventos.service';
 
 @Component({
@@ -19,32 +20,26 @@ export class EventosCadastroComponent {
       'horarioInicio': new FormControl('', [Validators.required]),
       'dataFinal': new FormControl('', [Validators.required]),
       'horarioFinal': new FormControl('', [Validators.required]),
+      'endereco': new FormControl('', [Validators.required]),
+      'numeroVoluntarios': new FormControl('', [Validators.required]),
+      'descricao': new FormControl('', [Validators.required]),
     });
   }
 
   async onSubmit() {
-    // const voluntario: IVoluntario = {
-    //   nome: this.cadastroEventoForm.get('nome')?.value,
-    //   telefone: this.cadastroEventoForm.get('telefone')?.value,
-    //   dataNascimento: this._formatarDataNascimento(this.cadastroEventoForm.get('dataNascimento')?.value),
-    //   cpf: this.cadastroEventoForm.get('cpf')?.value,
-    //   areasInteresse: this.cadastroEventoForm.get('areasInteresse')?.value,
-    // };
-    // await this.voluntariosService.cadastrarVoluntario(voluntario);
-    // this.router.navigate(['/privado/voluntarios']);
-  }
+    const evento: IEvento = {
+      nome: this.cadastroEventoForm.get('nome')?.value,
+      dataInicio: this.cadastroEventoForm.get('dataInicio')?.value,
+      horarioInicio: this.cadastroEventoForm.get('horarioInicio')?.value,
+      dataFinal: this.cadastroEventoForm.get('dataFinal')?.value,
+      horarioFinal: this.cadastroEventoForm.get('horarioFinal')?.value,
+      endereco: this.cadastroEventoForm.get('endereco')?.value,
+      numeroVoluntarios: this.cadastroEventoForm.get('numeroVoluntarios')?.value,
+      descricao: this.cadastroEventoForm.get('descricao')?.value
+    };
 
-  private _formatarDataNascimento(dataNascimento: string) {
-    const data = new Date(dataNascimento);
-    let dia = data.getUTCDate().toString();
-    if (dia.length === 1 )
-      dia = `0${dia}`;
-    let mes = (data.getMonth() + 1).toString();
-    if (mes.length === 1)
-      mes = `0${mes}`;
-    const ano = data.getFullYear();
-
-    return `${dia}/${mes}/${ano}`;
+    await this.eventosService.cadastrar(evento);
+    this.router.navigate(['/privado/eventos']);
   }
 
   validarMensagemDeErro(field: string) {

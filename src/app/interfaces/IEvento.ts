@@ -1,5 +1,5 @@
 export interface IEvento {
-    id: number,
+    id?: number,
     nome: string,
     dataInicio: string,
     horarioInicio: string,

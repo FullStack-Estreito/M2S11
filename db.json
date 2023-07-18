@@ -160,6 +160,17 @@
       "endereco": "Rua E, 222",
       "numeroVoluntarios": 20,
       "descricao": "No último evento do ano, faremos um bazar beneficente para arrecadar fundos para a ONG. Precisamos de voluntários para ajudar na organização e na venda dos produtos."
+    },
+    {
+      "nome": "Adoção de cachorros",
+      "dataInicio": "2023-07-20",
+      "horarioInicio": "0900",
+      "dataFinal": "2023-07-20",
+      "horarioFinal": "1800",
+      "endereco": "Rua Falsa 123",
+      "numeroVoluntarios": 6,
+      "descricao": "Evento para promover a adoção de cachorros resgatados",
+      "id": 6
     }
   ],
   "usuarios": [
