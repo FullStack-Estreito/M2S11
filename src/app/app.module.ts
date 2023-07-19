@@ -15,7 +15,9 @@ import { NaoAutenticadoComponent } from './components/nao-autenticado/nao-autent
 import { VoluntariosComponent } from './components/voluntarios/voluntarios.component';
 import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.component';
 import { VoluntariosCadastroComponent } from './components/voluntarios-cadastro/voluntarios-cadastro.component';
-import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component'
+import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { EventosCadastroComponent } from './components/eventos-cadastro/eventos-cadastro.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontra
     VoluntariosComponent,
     PrivadoLayoutComponent,
     VoluntariosCadastroComponent,
-    NaoEncontradoComponent
+    NaoEncontradoComponent,
+    EventosComponent,
+    EventosCadastroComponent
   ],
   imports: [
     BrowserModule,

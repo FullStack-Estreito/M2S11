@@ -10,6 +10,8 @@ import { VoluntariosComponent } from './components/voluntarios/voluntarios.compo
 import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.component';
 import { VoluntariosCadastroComponent } from './components/voluntarios-cadastro/voluntarios-cadastro.component';
 import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
+import { EventosComponent } from './components/eventos/eventos.component';
+import { EventosCadastroComponent } from './components/eventos-cadastro/eventos-cadastro.component';
 
 const routes: Routes = [
   { 
@@ -46,6 +48,16 @@ const routes: Routes = [
       { 
         path: 'voluntarios-cadastro', 
         component: VoluntariosCadastroComponent, 
+        canActivate: [ privadoGuard ] 
+      },
+      { 
+        path: 'eventos', 
+        component: EventosComponent, 
+        canActivate: [ privadoGuard ] 
+      },
+      { 
+        path: 'eventos-cadastro', 
+        component: EventosCadastroComponent, 
         canActivate: [ privadoGuard ] 
       }
     ]

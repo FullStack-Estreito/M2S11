@@ -118,15 +118,15 @@
       "descricao": "Este é o primeiro evento da ONG. Precisamos de voluntários para ajudar a organizar uma feira de adoção de animais."
     },
     {
-      "id": 2,
       "nome": "Arrecadação de alimentos",
       "dataInicio": "2023-08-15",
       "horarioInicio": "14:00",
       "dataFinal": "2023-08-15",
-      "horarioFinal": "17:00",
+      "horarioFinal": "1800",
       "endereco": "Avenida B, 456",
       "numeroVoluntarios": 8,
-      "descricao": "Neste evento, vamos fazer uma campanha de arrecadação de alimentos para famílias carentes. Precisamos de voluntários para receber as doações."
+      "descricao": "Neste evento, vamos fazer uma campanha de arrecadação de alimentos para famílias carentes. Precisamos de voluntários para receber as doações.",
+      "id": 2
     },
     {
       "id": 3,
@@ -140,15 +140,15 @@
       "descricao": "Vamos realizar um mutirão de limpeza no parque da cidade. Precisamos de voluntários para recolher o lixo e fazer a manutenção do local."
     },
     {
-      "id": 4,
-      "nome": "Oficina de artesanato",
+      "nome": "Oficina de artesanato para crianças",
       "dataInicio": "2023-09-20",
       "horarioInicio": "13:00",
       "dataFinal": "2023-09-20",
       "horarioFinal": "16:00",
       "endereco": "Avenida D, 1010",
       "numeroVoluntarios": 12,
-      "descricao": "Neste evento, faremos uma oficina de artesanato para crianças. Precisamos de voluntários para auxiliar na atividade."
+      "descricao": "Neste evento, faremos uma oficina de artesanato para crianças. Precisamos de voluntários para auxiliar na atividade.",
+      "id": 4
     },
     {
       "id": 5,
@@ -160,6 +160,17 @@
       "endereco": "Rua E, 222",
       "numeroVoluntarios": 20,
       "descricao": "No último evento do ano, faremos um bazar beneficente para arrecadar fundos para a ONG. Precisamos de voluntários para ajudar na organização e na venda dos produtos."
+    },
+    {
+      "nome": "Adoção de cachorros",
+      "dataInicio": "2023-07-20",
+      "horarioInicio": "0900",
+      "dataFinal": "2023-07-20",
+      "horarioFinal": "1800",
+      "endereco": "Rua Falsa 123",
+      "numeroVoluntarios": 6,
+      "descricao": "Evento para promover a adoção de cachorros resgatados",
+      "id": 6
     }
   ],
   "usuarios": [
