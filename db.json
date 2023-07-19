@@ -1,0 +1,187 @@
+{
+  "voluntarios": [
+    {
+      "id": 1,
+      "nome": "Luana Débora Gabriela da Rocha",
+      "cpf": "19892863054",
+      "dataNascimento": "24/01/1993",
+      "telefone": "65982176612",
+      "areasInteresse": "Jardinagem, construção"
+    },
+    {
+      "id": 2,
+      "nome": "Débora Maya Assunção",
+      "cpf": "60752043854",
+      "dataNascimento": "22/05/1950",
+      "telefone": "86998512453",
+      "areasInteresse": "Caminhada, animais"
+    },
+    {
+      "id": 3,
+      "nome": "Teresinha Laís Tereza Sales",
+      "cpf": "40922238979",
+      "dataNascimento": "22/03/1974",
+      "telefone": "69982241007",
+      "areasInteresse": "Jardinagem, construção"
+    },
+    {
+      "id": 4,
+      "nome": "Catarina Sueli Novaes",
+      "cpf": "41548132004",
+      "dataNascimento": "25/04/1972",
+      "telefone": "41994787946",
+      "areasInteresse": "Crianças, idosos"
+    },
+    {
+      "id": 5,
+      "nome": "Mariah Nair Peixoto",
+      "cpf": "42984660943",
+      "dataNascimento": "12/05/1997",
+      "telefone": "96994870151",
+      "areasInteresse": "Animais, crianças"
+    },
+    {
+      "id": 6,
+      "nome": "Rosângela Raquel Oliveira",
+      "cpf": "16215160083",
+      "dataNascimento": "13/03/1973",
+      "telefone": "69985164940",
+      "areasInteresse": "Idosos, eventos festivos"
+    },
+    {
+      "id": 7,
+      "nome": "Miguel Iago Brito",
+      "cpf": "58406449195",
+      "dataNascimento": "10/04/1988",
+      "telefone": "31998035967",
+      "areasInteresse": "Jardinagem, animais"
+    },
+    {
+      "id": 8,
+      "nome": "Josefa Ana Araújo",
+      "cpf": "84127818646",
+      "dataNascimento": "27/01/1965",
+      "telefone": "63981618681",
+      "areasInteresse": "Construção, crianças"
+    },
+    {
+      "nome": "Maria das Luzes",
+      "telefone": "41987563240",
+      "dataNascimento": "1991-09-08",
+      "cpf": "15698784265",
+      "areasInteresse": "Esportes, venda de roupas",
+      "id": 9
+    },
+    {
+      "nome": "fasd",
+      "telefone": "16515616516",
+      "dataNascimento": "5/1/1990",
+      "cpf": "15615615616",
+      "areasInteresse": "Qualquer coisa",
+      "id": 10
+    },
+    {
+      "nome": "fsadfsdafas",
+      "telefone": "15615641561",
+      "dataNascimento": "31/01/1899",
+      "cpf": "15616545645",
+      "areasInteresse": "Qualquer coisa também",
+      "id": 11
+    },
+    {
+      "nome": "asfdsafasfddsaa",
+      "telefone": "43134124124",
+      "dataNascimento": "08/02/1889",
+      "cpf": "41412412412",
+      "areasInteresse": "djusajdasoidja",
+      "id": 12
+    },
+    {
+      "nome": "asfsadfasfs",
+      "telefone": "46584564564",
+      "dataNascimento": "02/02/2002",
+      "cpf": "15615615645",
+      "areasInteresse": "fasdfasddfasf",
+      "id": 13
+    }
+  ],
+  "eventos": [
+    {
+      "id": 1,
+      "nome": "Festa de adoção de animais",
+      "dataInicio": "2023-08-01",
+      "horarioInicio": "09:00",
+      "dataFinal": "2023-08-01",
+      "horarioFinal": "12:00",
+      "endereco": "Rua A, 123",
+      "numeroVoluntarios": 10,
+      "descricao": "Este é o primeiro evento da ONG. Precisamos de voluntários para ajudar a organizar uma feira de adoção de animais."
+    },
+    {
+      "nome": "Arrecadação de alimentos",
+      "dataInicio": "2023-08-15",
+      "horarioInicio": "14:00",
+      "dataFinal": "2023-08-15",
+      "horarioFinal": "1800",
+      "endereco": "Avenida B, 456",
+      "numeroVoluntarios": 8,
+      "descricao": "Neste evento, vamos fazer uma campanha de arrecadação de alimentos para famílias carentes. Precisamos de voluntários para receber as doações.",
+      "id": 2
+    },
+    {
+      "id": 3,
+      "nome": "Multirão de limpeza",
+      "dataInicio": "2023-09-05",
+      "horarioInicio": "10:00",
+      "dataFinal": "2023-09-05",
+      "horarioFinal": "14:00",
+      "endereco": "Rua C, 789",
+      "numeroVoluntarios": 15,
+      "descricao": "Vamos realizar um mutirão de limpeza no parque da cidade. Precisamos de voluntários para recolher o lixo e fazer a manutenção do local."
+    },
+    {
+      "nome": "Oficina de artesanato para crianças",
+      "dataInicio": "2023-09-20",
+      "horarioInicio": "13:00",
+      "dataFinal": "2023-09-20",
+      "horarioFinal": "16:00",
+      "endereco": "Avenida D, 1010",
+      "numeroVoluntarios": 12,
+      "descricao": "Neste evento, faremos uma oficina de artesanato para crianças. Precisamos de voluntários para auxiliar na atividade.",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "nome": "Bazar beneficente",
+      "dataInicio": "2023-10-10",
+      "horarioInicio": "08:00",
+      "dataFinal": "2023-10-10",
+      "horarioFinal": "18:00",
+      "endereco": "Rua E, 222",
+      "numeroVoluntarios": 20,
+      "descricao": "No último evento do ano, faremos um bazar beneficente para arrecadar fundos para a ONG. Precisamos de voluntários para ajudar na organização e na venda dos produtos."
+    },
+    {
+      "nome": "Adoção de cachorros",
+      "dataInicio": "2023-07-20",
+      "horarioInicio": "0900",
+      "dataFinal": "2023-07-20",
+      "horarioFinal": "1800",
+      "endereco": "Rua Falsa 123",
+      "numeroVoluntarios": 6,
+      "descricao": "Evento para promover a adoção de cachorros resgatados",
+      "id": 6
+    }
+  ],
+  "usuarios": [
+    {
+      "nomeCompleto": "Alvaro Jose",
+      "telefone": "45615861656",
+      "dataNascimento": "2023-07-12",
+      "cpf": "15861686868",
+      "email": "alvaro@email.com",
+      "senha": "12345678",
+      "id": 1
+    }
+  ]
+}
