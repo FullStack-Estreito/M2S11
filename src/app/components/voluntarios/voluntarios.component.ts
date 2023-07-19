@@ -10,11 +10,17 @@ import { VoluntariosService } from 'src/app/services/voluntarios.service';
 export class VoluntariosComponent implements OnInit {
 
   voluntarios: IVoluntario[] = [];
+  carregando = true;
 
   constructor(private voluntariosService: VoluntariosService) { }
 
   async ngOnInit() {
-    this.voluntarios = await this.voluntariosService.obterVoluntarios();
+    try {
+      this.voluntarios = await this.voluntariosService.obterVoluntarios();
+      this.carregando = false;
+    } catch (e) {
+
+    }
   }
 
 }

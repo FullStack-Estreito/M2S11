@@ -1,4 +1,4 @@
-<div class="mt-3">
+<div class="mt-3" *ngIf="!carregando">
     <div class="row mb-3">
         <div class="col-9">
             <h3>Lista de voluntários cadastrados: </h3>
@@ -28,3 +28,4 @@
         </tbody>
       </table>
 </div>
+<app-carregando-spinner *ngIf="carregando"></app-carregando-spinner>

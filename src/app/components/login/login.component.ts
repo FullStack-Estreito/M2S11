@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -26,8 +27,13 @@ export class LoginComponent {
       };
       await this.authService.logar(usuario);
       this.router.navigate(['privado/inicio']);
-    } catch {
-      alert('Email ou senha inválidos!!');
+    } catch (e) {
+      if (e instanceof Error)
+        alert('Email ou senha inválidos!!');
+      else if (e instanceof HttpErrorResponse)
+        alert('Erro na conexão com o servidor, por favor tente mais tarde!');
+      else
+        alert('Um erro desconhecido aconteceu!!');
     }
   }
 

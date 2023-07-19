@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -26,17 +27,25 @@ export class CadastroComponent {
   }
 
   async onSubmit() {
-    const usuario: IUsuario = {
-      nomeCompleto: this.cadastroForm.get('nome')?.value,
-      telefone: this.cadastroForm.get('telefone')?.value,
-      dataNascimento: this.cadastroForm.get('dataNascimento')?.value,
-      cpf: this.cadastroForm.get('cpf')?.value,
-      email: this.cadastroForm.get('email')?.value,
-      senha: this.cadastroForm.get('senha')?.value
-    };
 
-    await this.authService.registrar(usuario);
-    this.router.navigate(['login']);
+    try {
+      const usuario: IUsuario = {
+        nomeCompleto: this.cadastroForm.get('nome')?.value,
+        telefone: this.cadastroForm.get('telefone')?.value,
+        dataNascimento: this.cadastroForm.get('dataNascimento')?.value,
+        cpf: this.cadastroForm.get('cpf')?.value,
+        email: this.cadastroForm.get('email')?.value,
+        senha: this.cadastroForm.get('senha')?.value
+      };
+
+      await this.authService.registrar(usuario);
+      this.router.navigate(['login']);
+    } catch (e) {
+      if (e instanceof HttpErrorResponse)
+        alert('Erro na conexão com o servidor, por favor tente mais tarde!');
+      else
+        alert('Um erro desconhecido aconteceu!!');
+    }
   }
 
   validateErrorMessage(field: string) {
@@ -44,7 +53,7 @@ export class CadastroComponent {
   }
 
   validarMensagemErroConfirmacaoSenha() {
-    const campo = this.cadastroForm.get('confirmacaoSenha'); 
+    const campo = this.cadastroForm.get('confirmacaoSenha');
     return campo?.errors && campo?.hasError('confirmacaoSenhaInvalida') && campo?.touched;
   }
 

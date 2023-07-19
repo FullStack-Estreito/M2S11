@@ -11,11 +11,17 @@ import { EventosService } from 'src/app/services/eventos.service';
 export class EventosComponent {
 
   eventos: IEvento[] = [];
+  carregando = true;
 
   constructor(private eventosService: EventosService, private router: Router) { }
 
   async ngOnInit() {
-    this.eventos = await this.eventosService.obterEventos();
+    try {
+      this.eventos = await this.eventosService.obterEventos();
+      this.carregando = false;
+    } catch (e) {
+
+    }
   }
 
   editar(evento: IEvento) {
