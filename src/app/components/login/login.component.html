@@ -16,4 +16,8 @@
     </div>
 </form>
 
-<app-modal-erro></app-modal-erro>
+<app-modal-erro
+    (fecharEvento)="mensagemDeErro = ''"
+    *ngIf="mensagemDeErro.length">
+    {{ mensagemDeErro }}
+</app-modal-erro>

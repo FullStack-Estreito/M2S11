@@ -13,6 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class CadastroComponent {
 
   cadastroForm: FormGroup;
+  msgErro = '';
 
   constructor(private router: Router, private authService: AuthService) {
     this.cadastroForm = new FormGroup({
@@ -42,9 +43,9 @@ export class CadastroComponent {
       this.router.navigate(['login']);
     } catch (e) {
       if (e instanceof HttpErrorResponse)
-        alert('Erro na conexão com o servidor, por favor tente mais tarde!');
+        this.msgErro = 'Erro na conexão com o servidor, por favor tente mais tarde!';
       else
-        alert('Um erro desconhecido aconteceu!!');
+        this.msgErro = 'Um erro desconhecido aconteceu!!';
     }
   }
 

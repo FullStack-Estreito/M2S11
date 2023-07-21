@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { IEvento } from 'src/app/interfaces/IEvento';
@@ -12,6 +13,7 @@ export class EventosComponent {
 
   eventos: IEvento[] = [];
   carregando = true;
+  msgErro = '';
 
   constructor(private eventosService: EventosService, private router: Router) { }
 
@@ -20,7 +22,10 @@ export class EventosComponent {
       this.eventos = await this.eventosService.obterEventos();
       this.carregando = false;
     } catch (e) {
-
+      if (e instanceof HttpErrorResponse)
+        this.msgErro = 'Erro na conexão com o servidor, por favor tente mais tarde!';
+      else
+        this.msgErro = 'Um erro desconhecido aconteceu!!';
     }
   }
 

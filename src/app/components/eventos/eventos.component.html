@@ -35,3 +35,8 @@
   </table>
 </div>
 <app-carregando-spinner *ngIf="carregando"></app-carregando-spinner>
+<app-modal-erro 
+    *ngIf="msgErro.length"
+    (fecharEvento)="msgErro = ''">
+    {{msgErro}}
+</app-modal-erro>

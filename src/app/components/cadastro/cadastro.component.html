@@ -42,3 +42,9 @@
         <button type="submit" class="btn btn-primary btn-sm" [disabled]="cadastroForm.invalid">Cadastrar</button>
     </div>
 </form>
+
+<app-modal-erro 
+    *ngIf="msgErro.length"
+    (fecharEvento)="msgErro = ''">
+    {{msgErro}}
+</app-modal-erro>

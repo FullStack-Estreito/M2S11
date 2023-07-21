@@ -18,6 +18,7 @@ export class InicioComponent implements OnInit {
   };
 
   carregando = true;
+  msgErro = '';
 
   constructor(
     private voluntariosService: VoluntariosService,
@@ -31,9 +32,9 @@ export class InicioComponent implements OnInit {
       this.carregando = false;
     } catch (e) {
       if (e instanceof HttpErrorResponse)
-        alert('Erro na conexão com o servidor, por favor tente mais tarde!');
+        this.msgErro = 'Erro na conexão com o servidor, por favor tente mais tarde!';
       else
-        alert('Um erro desconhecido aconteceu!!');
+        this.msgErro = 'Um erro desconhecido aconteceu!!';
     }
   }
 }

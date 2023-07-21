@@ -1,7 +1,3 @@
-
-
-<app-carregando-spinner *ngIf="carregando"></app-carregando-spinner>
-
 <div *ngIf="!carregando">
   <h3 class="pt-3">Número de voluntários: </h3>
   <h3> {{ quantidadeVoluntarios }} </h3>
@@ -25,3 +21,10 @@
     </tbody>
   </table>
 </div>
+
+<app-carregando-spinner *ngIf="carregando"></app-carregando-spinner>
+<app-modal-erro 
+    *ngIf="msgErro.length"
+    (fecharEvento)="msgErro = ''">
+    {{msgErro}}
+</app-modal-erro>

@@ -11,6 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  mostrarModalErro = false;
+  mensagemDeErro = '';
 
   constructor(private router: Router, private authService: AuthService) {
     this.loginForm = new FormGroup({
@@ -28,12 +30,13 @@ export class LoginComponent {
       await this.authService.logar(usuario);
       this.router.navigate(['privado/inicio']);
     } catch (e) {
+      this.mostrarModalErro = true;
       if (e instanceof Error)
-        alert('Email ou senha inválidos!!');
+        this.mensagemDeErro = 'Email ou senha inválidos!!';
       else if (e instanceof HttpErrorResponse)
-        alert('Erro na conexão com o servidor, por favor tente mais tarde!');
+        this.mensagemDeErro = 'Erro na conexão com o servidor, por favor tente mais tarde!';
       else
-        alert('Um erro desconhecido aconteceu!!');
+        this.mensagemDeErro = 'Um erro desconhecido aconteceu!!';
     }
   }
 
