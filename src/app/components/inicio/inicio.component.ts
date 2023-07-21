@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EventosService } from 'src/app/services/eventos.service';
 import { VoluntariosService } from 'src/app/services/voluntarios.service';
@@ -16,13 +17,24 @@ export class InicioComponent implements OnInit {
     quantidade: []
   };
 
+  carregando = true;
+  msgErro = '';
+
   constructor(
     private voluntariosService: VoluntariosService,
     private eventosService: EventosService) { }
 
   async ngOnInit() {
-    this.quantidadeVoluntarios = await this.voluntariosService.obterQuantidadeTotal();
-    this.quantidadeEventos = await this.eventosService.obterQuantidadeTotal();
-    this.listaDatasEventos = await this.eventosService.obterListaDeEventosPorData();
+    try{
+      this.quantidadeVoluntarios = await this.voluntariosService.obterQuantidadeTotal();
+      this.quantidadeEventos = await this.eventosService.obterQuantidadeTotal();
+      this.listaDatasEventos = await this.eventosService.obterListaDeEventosPorData();
+      this.carregando = false;
+    } catch (e) {
+      if (e instanceof HttpErrorResponse)
+        this.msgErro = 'Erro na conexão com o servidor, por favor tente mais tarde!';
+      else
+        this.msgErro = 'Um erro desconhecido aconteceu!!';
+    }
   }
 }

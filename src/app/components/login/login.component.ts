@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,6 +11,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  mostrarModalErro = false;
+  mensagemDeErro = '';
 
   constructor(private router: Router, private authService: AuthService) {
     this.loginForm = new FormGroup({
@@ -26,8 +29,14 @@ export class LoginComponent {
       };
       await this.authService.logar(usuario);
       this.router.navigate(['privado/inicio']);
-    } catch {
-      alert('Email ou senha inválidos!!');
+    } catch (e) {
+      this.mostrarModalErro = true;
+      if (e instanceof Error)
+        this.mensagemDeErro = 'Email ou senha inválidos!!';
+      else if (e instanceof HttpErrorResponse)
+        this.mensagemDeErro = 'Erro na conexão com o servidor, por favor tente mais tarde!';
+      else
+        this.mensagemDeErro = 'Um erro desconhecido aconteceu!!';
     }
   }
 

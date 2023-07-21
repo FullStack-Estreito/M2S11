@@ -182,6 +182,15 @@
       "email": "alvaro@email.com",
       "senha": "12345678",
       "id": 1
+    },
+    {
+      "nomeCompleto": "Beatriz Moreira",
+      "telefone": "41956874715",
+      "dataNascimento": "1975-04-15",
+      "cpf": "15871651545",
+      "email": "beatriz@email.com",
+      "senha": "12345678",
+      "id": 2
     }
   ]
 }

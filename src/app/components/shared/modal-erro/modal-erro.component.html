@@ -1,0 +1,10 @@
+<div *ngIf="mostrarModal">
+    <div class="bd">
+    </div>
+    <dialog style="top: 20%;" open>
+        <ng-content></ng-content>
+        <form class="mt-3" method="dialog">
+          <button class="btn btn-danger btn-sm" (click)="fechar()">Fechar</button>
+        </form>
+    </dialog>
+</div>
