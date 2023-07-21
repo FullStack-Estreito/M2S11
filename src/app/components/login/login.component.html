@@ -15,3 +15,9 @@
         <button type="button" class="btn btn-primary btn-sm" (click)="cadastrar()">Cadastrar</button>
     </div>
 </form>
+
+<app-modal-erro
+    (fecharEvento)="mensagemDeErro = ''"
+    *ngIf="mensagemDeErro.length">
+    {{ mensagemDeErro }}
+</app-modal-erro>

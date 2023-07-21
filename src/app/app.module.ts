@@ -17,7 +17,9 @@ import { PrivadoLayoutComponent } from './layouts/privado-layout/privado-layout.
 import { VoluntariosCadastroComponent } from './components/voluntarios-cadastro/voluntarios-cadastro.component';
 import { NaoEncontradoComponent } from './components/nao-encontrado/nao-encontrado.component';
 import { EventosComponent } from './components/eventos/eventos.component';
-import { EventosCadastroComponent } from './components/eventos-cadastro/eventos-cadastro.component'
+import { EventosCadastroComponent } from './components/eventos-cadastro/eventos-cadastro.component';
+import { ModalErroComponent } from './components/shared/modal-erro/modal-erro.component';
+import { CarregandoSpinnerComponent } from './components/shared/carregando-spinner/carregando-spinner.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { EventosCadastroComponent } from './components/eventos-cadastro/eventos-
     VoluntariosCadastroComponent,
     NaoEncontradoComponent,
     EventosComponent,
-    EventosCadastroComponent
+    EventosCadastroComponent,
+    ModalErroComponent,
+    CarregandoSpinnerComponent
   ],
   imports: [
     BrowserModule,
